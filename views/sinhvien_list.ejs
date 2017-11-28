@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quan ly sinh vien</title>
+</head>
+
+<body>
+    <table width="500" border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>ho ten</td>
+                <td>email</td>
+                <td> <a href="../sinhvien/them">Them</a></td>
+            </tr>
+        </thead>
+        <tbody>
+            <% sinhviens.rows.forEach(function(sv){  %>
+                <tr>
+                    <td><%= sv.id %></td>
+                    <td><%= sv.hoten %></td>
+                    <td><%= sv.email %></td>
+                    <td>
+                        <a href="../sinhvien/sua/<%= sv.id %>">Sua</a> -
+                        <a onclick="return confirm('Ban co muon xoa sinh vien');" href="../sinhvien/xoa/<%= sv.id %>">Xoa</a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>
